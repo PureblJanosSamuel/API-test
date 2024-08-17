@@ -20,5 +20,9 @@ def home():
 def get_person(id):
   return fech_data(id,"people")
 
+@app.route('/planets/<int:id>', methods=['GET'])
+def get_planet(id):
+  return fech_data(id,"planets")
+
 if __name__ == "__main__":
   app.run(debug=True)
