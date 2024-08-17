@@ -11,6 +11,9 @@ def fech_data(id, endpoint):
     return jsonify(response.json())
   else:
     return jsonify({"error":"Person cannot found!"}), 404
+  
+  def residents_on_planets(planet_id):
+    planet_data = 10
 
 @app.route("/")
 def home():
@@ -19,6 +22,12 @@ def home():
 @app.route('/people/<int:id>', methods=['GET'])
 def get_person(id):
   return fech_data(id,"people")
+
+@app.route('/planets/<int:id>', methods=['GET'])
+def get_planet(id):
+  return fech_data(id,"planets")
+
+
 
 if __name__ == "__main__":
   app.run(debug=True)
