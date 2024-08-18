@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 import requests
-SWAPI_BASE_URL = "https://swapi.dev/api/"
+from connection import *
 
 # It is help searching for people by ID
 def fech_data(id, endpoint):
