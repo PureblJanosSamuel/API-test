@@ -26,7 +26,7 @@ def get_films_stsh_ve(film_id):
   extra = request.args.get("extra")
   if extra:
     character_id = int(extra[-2])
-    if int(character_id) == character_id:
+    if character_id.isdigit():
       return stsh_ve_ch_film(film_id, character_id)
     else:
       return jsonify({"Error":"Give a number"})
